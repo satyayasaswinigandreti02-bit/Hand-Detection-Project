@@ -44,8 +44,15 @@ while True:
 
         if hand_count == 2:
             display_text = "BOTH HANDS"
+
         else:
             hand_name = results.handedness[0][0].category_name
+
+            if hand_name == "Left":
+                hand_name = "Right"
+            else:
+                hand_name = "Left"
+
             display_text = hand_name.upper() + " HAND"
 
         print(display_text)
@@ -72,6 +79,7 @@ while True:
             (0, 255, 0),
             3
         )
+
     else:
         display_text = "NO HAND DETECTED"
 
